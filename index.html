@@ -1,0 +1,84 @@
+<html lang="en"><head>
+    <meta charset="utf-8">
+    <title>Review Exercise 8</title>
+    <style>
+    body {
+    background-image: url(../images/bkg.jpg);
+}
+#content {
+    background-color: white;
+    top: 50%;
+    height: 50%;
+    width: 700px;
+    height: 500px;
+    margin: 0 auto;
+    margin-top: 15%;    
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+    border: 10px solid black;
+}
+.title {
+    font-size: 24pt;
+    color: red;
+}
+
+.chars{
+    color: blue;
+}
+
+.result{
+    color: green;
+}</style>
+    <script>
+    var characters = ["archie", "betty", "jughead", "veronica", "josie", "cheryl"];
+var result = document.getElementById("result");
+
+function clickEnter() {
+    var character = document.getElementById("char").value;
+    var index = characters.indexOf(character.toLowerCase());
+
+    switch(index){
+        case 0:
+            resultMsg = "Archie tries to write a song to solve the murder and does not come up with a conclusion.";
+            break;
+        case 1:
+            resultMsg = "Betty thinks her sister can help so you two go visit her at the home she was put into.";
+            break;
+        case 2:
+            resultMsg = "Jughead seeks help from his father who is a part of the Southside Serpents.";
+            break;
+        case 3:
+            resultMsg = "Veronica thinks her father is involved so you two go try to track him down at the prison.";
+            break;
+        case 4:
+            resultMsg = "Josie does not really care and invites you to sing with the Pussycats.";
+            break;
+        case 5:
+            resultMsg = "Cheryl is offended that you mentioned Jason so she gives you the silent treatment.";
+            break;
+        default:
+            resultMsg = "This is not a valid character. Please try again.";
+    }
+
+    document.getElementById("result").textContent = resultMsg;
+}
+
+var buttonElement = document.querySelector("button");
+buttonElement.onclick = clickEnter;
+    </script>
+</head>
+<body>
+    <div id="content">
+        <header>
+            <img src="images/logo.png" alt="logo">
+        </header>
+        <p class="title">A Mystery Story</p>
+        <p> Can you figure out who killed Jason Blossom?</p>
+        <p> Pick and type in the text box any of these characters to help you solve the crime</p>
+        <p class="chars">Archie, Betty, Jughead, Veronica, Josie, Cheryl</p>
+        <p class="result" id="result">Cheryl is offended that you mentioned Jason so she gives you the silent treatment.</p>
+        <input type="text" id="char">
+        <button onclick="clickEnter()">Submit</button>
+    </div>
+
+</body></html>
